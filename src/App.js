@@ -23,28 +23,28 @@ import './App.css';
 //   );
 // }
 
-function MyButton({ }) {
+
+export default function MyApp() {
   const [count, setCount] = useState(0);
 
   function handleClick() {
     setCount(count + 1);
   }
-
+  return (
+    <div>
+      <h1>Counters that update separately</h1>
+      <MyButton count={count} onClick={handleClick}/>
+      <MyButton count={count} onClick={handleClick}/>
+    </div>
+  );
+}
+function MyButton({ count, onClick }) {
+  
   return(
-    <button onClick={handleClick}>
+    <button onClick={onClick}>
    clik{count} times
     </button>
   )
   }
-export default function MyApp() {
-  
-  return (
-    <div>
-      <h1>Counters that update separately</h1>
-      <MyButton/>
-      <MyButton/>
-    </div>
-  );
-}
 
 
