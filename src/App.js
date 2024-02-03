@@ -2,47 +2,49 @@ import React from 'react';
 import {useState} from 'react';
 
 import './App.css';
-function MyButton(){
-  const[count, setcount] = useState(0);
-  function HandleClick(){
-    setcount(count + 1);
-    // alert('You cliked me')
+// export default function MyApp() {  
+//   const[count, setcount] = useState(0);
+//   function HandleClick() {
+//     setcount(count + 1);
+//   }
+//  return (
+//     <>
+// <MyButton />
+// <MyButton />
+
+// </>
+//  );
+//  }
+// function MyButton({count, HandleClick}){
+//   return(
+//   <button onClick={HandleClick}>
+//     Cliked {count} times
+//   </button>
+//   );
+// }
+
+function MyButton({ }) {
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count + 1);
   }
+
   return(
-    <button onClick={HandleClick}>
-      Cliked {count} times
+    <button onClick={handleClick}>
+   clik{count} times
     </button>
   )
-}
-
-const products = [
-  {title:'pomme', isFruit: true, id: 1},
-  {title:'Garlic', isFruit:false, id:2},
-  {title: 'Apple', isFruit:true, id:3},
-];
-function ShoppingList() {
-const listItems = products.map(product => 
-  <li
-   key={product.id}
-    style={{
-      color: product.isFruit ? 'Red' :'darkgreen'
-    }}>    
-    {product.title}
-  </li>
-  );
+  }
+export default function MyApp() {
+  
   return (
-    <ul>{listItems}</ul>
-  )
-}
-
-export default function myApp() {  
- return (
-    <>
-<MyButton />
-      <MyButton />
-
-</>
- );
+    <div>
+      <h1>Counters that update separately</h1>
+      <MyButton/>
+      <MyButton/>
+    </div>
+  );
 }
 
 
