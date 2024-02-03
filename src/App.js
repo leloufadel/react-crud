@@ -1,12 +1,16 @@
 import React from 'react';
+import {useState} from 'react';
+
 import './App.css';
 function MyButton(){
+  const[count, setcount] = useState(0);
   function HandleClick(){
-    alert('You cliked me')
+    setcount(count + 1);
+    // alert('You cliked me')
   }
   return(
     <button onClick={HandleClick}>
-      Clik ma
+      Cliked {count} times
     </button>
   )
 }
@@ -34,7 +38,8 @@ const listItems = products.map(product =>
 export default function myApp() {  
  return (
     <>
-<MyButton/> 
+<MyButton />
+      <MyButton />
 
 </>
  );
