@@ -1,19 +1,25 @@
+import React from 'react';
 import './App.css';
 
-function MyButton(){
+const user = {
+  name: 'Hedy Lamarr',
+  imageUrl: 'https://i.imgur.com/yXOvdOSs.jpg',
+  imageSize: 90,
+};
+export default function myApp() {  
   return (
-    <button>
-      I'am a button
-    </button>
-  )
-
-}
-export default function MyApp() {
-  return (
-   <div>
-    <h1> welcom to My Button</h1>
-    <MyButton/>
-   </div>
+   <>
+    <h1> {user.name}</h1>
+    <img
+        className="avatar"
+       src={user.imageUrl}
+        alt={'Photo of ' + user.name}
+        style={{
+        width:user.imageSize,
+        height:user.imageSize,
+        }}
+      />
+   </>
   );
 }
 
