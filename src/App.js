@@ -1,17 +1,27 @@
 import React from 'react';
 import './App.css';
+function MyButton(){
+  function HandleClick(){
+    alert('You cliked me')
+  }
+  return(
+    <button onClick={HandleClick}>
+      Clik ma
+    </button>
+  )
+}
 
 const products = [
   {title:'pomme', isFruit: true, id: 1},
   {title:'Garlic', isFruit:false, id:2},
   {title: 'Apple', isFruit:true, id:3},
 ];
-export default function ShoppingList() {
+function ShoppingList() {
 const listItems = products.map(product => 
   <li
    key={product.id}
     style={{
-      color: product.isFruit ? 'Black' :'darkgreen'
+      color: product.isFruit ? 'Red' :'darkgreen'
     }}>    
     {product.title}
   </li>
@@ -20,21 +30,14 @@ const listItems = products.map(product =>
     <ul>{listItems}</ul>
   )
 }
-// export default function myApp() {  
-//   return (
-//    <>
-//     <h1> {user.name}</h1>
-//     <img
-//         className="avatar"
-//        src={user.imageUrl}
-//         alt={'Photo of ' + user.name}
-//         style={{
-//         width:user.imageSize,
-//         height:user.imageSize,
-//         }}
-//       />
-//    </>
-//   );
-// }
+
+export default function myApp() {  
+ return (
+    <>
+<MyButton/> 
+
+</>
+ );
+}
 
 
