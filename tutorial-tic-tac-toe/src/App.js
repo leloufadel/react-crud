@@ -4,7 +4,7 @@
 
 // import App from './App';
 
-export default function Square() {
+export default function Board() {
   return(
   <> 
   <div className="board-row">
